@@ -1,0 +1,53 @@
+<Typography variant="h3" color="textPrimary" gutterBottom>
+                    Meeting Preparation
+                </Typography>
+                <Typography variant="body1" color="textPrimary" gutterBottom>                
+                {bull}Check the Portal to see if there are any responses to close the loop on previous feedbacks
+                </Typography>
+                <Typography variant="body1" color="textPrimary" gutterBottom>     
+                {bull}Choose 5 Associates from your reporting group for each meeting with the aim to include all of your reporting group within 3 months (Maximum group size: 6 including manager)
+                </Typography>
+                <Typography variant="body1" color="textPrimary" gutterBottom> 
+                {bull}Give the Associates - and the departmental Team Leads, at least 2 hours notice of the meeting
+                </Typography>
+                <Typography variant="body1" color="textPrimary" gutterBottom> 
+                {bull}Clearly communicate the meeting place and time - and the reason for the meeting
+                </Typography>
+                <Typography variant="body1" color="textPrimary" gutterBottom> 
+                {bull}When Associates gather for the meeting, scan Associates to the correct ‘start’ calm code immediately to avoid Time Off Task being effected
+                </Typography>
+                <Typography variant="body1" color="textPrimary" gutterBottom> 
+                {bull}Choose a quiet seated area away from the operations floor - ideally with access to drinks machines
+                </Typography>
+                <Typography variant="body1" color="textPrimary" gutterBottom> 
+                {bull}Review meeting prompt/guidance
+                </Typography>
+                <Typography variant="body1" color="textPrimary" gutterBottom> 
+                {bull}From the beginning, adopt a positive, open and friendly demeanour. Sit in a central location to the group.
+                </Typography>
+                <Typography variant="h3" color="textPrimary" gutterBottom>
+                    The Meeting - things to cover and Questions to Ask
+                </Typography>
+                <Typography variant="h6" color="textPrimary" gutterBottom>
+                    Introduction Content
+                </Typography>
+
+                Self introduction (Name and role)
+                Explanation of what a 1:5 Connections meeting is and its aim
+                Anonymity (The names/logins of the Associate will not be communicated to anyone outside of the group)
+                What happens to the feedback (Portal entry and responses from The Senior Team)
+                Meeting duration (one hour)
+                Seek to Understand: Mandatory and freeform questions (M = Mandatory)
+                What’s good about working at BHX4 - What do you enjoy about it? [M]
+                What could be better? [M]
+                2 x ’Seek to understand’ questions around low scoring Connections scores related to the AM conducting the 1:5 meeting. [M]
+                Minimum of 1 x ’Seek to understand’ question around low scoring Connections score related to the building. [M]
+                Free Form Discussion/Questions: Topics and questions chosen by the AM that reflect things that are happening right now - or are about to happen that may/are affecting the mood of the team; such as recently announced policy changes, operational and facilities/building changes. It would also be an opportunity to gather pole/survey data and to correct rumours circulating among the greater team that have come to the attention of the ER Teams.
+                If there is one thing that you would change here at BHX4, what would it be? (Consensus question - answer to be agreed by the whole/majority of the group). [M]
+                At the End of the Meeting
+                Close the loops on feedback given at previous meeting - if applicable
+                Thank all those for attending
+                Scan all the Associates to the ‘End’ calm code
+                Enter feedbacks into portal immediately/soon after the meeting using the guidance on the feedback entry page. Feedback entry should take no more than 10/15 minutes
+                Dispose of all meeting notes in the confidential bins
+
