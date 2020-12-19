@@ -1,6 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
 import NavigationBar from './components/navbar'
+import Amplify, {Auth} from 'aws-amplify';
+import awsconfig from './aws-exports';
+import {withAuthenticator} from '@aws-amplify/ui-react'
+Amplify.configure(awsconfig)
+
+
+async function signOut() {
+  console.log("Logout pressed")
+  try {
+      await Auth.signOut();
+  } catch (error) {
+      console.log('error signing out: ', error);
+  }
+}
 
 function App() {
   return (
@@ -23,5 +37,5 @@ function App() {
     </div>
   );
 }
-
-export default App;
+export{signOut}
+export default withAuthenticator(App);
