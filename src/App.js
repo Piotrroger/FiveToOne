@@ -6,7 +6,6 @@ import awsconfig from './aws-exports';
 import {withAuthenticator} from '@aws-amplify/ui-react'
 import React, {useEffect, useState} from 'react'
 import MenuBar from './components/menubar';
-import Register from './components/addForm';
 import {listRecordTables as GetRecordTable} from './graphql/queries'
 import {API, graphqlOperation} from 'aws-amplify'
 Amplify.configure(awsconfig)
@@ -37,7 +36,6 @@ function App() {
       <NavigationBar/>
         {/* MAIN PAGE HERE:  */}
         <MenuBar/>
-        <Register/>
       <header className="App-header">
         <div>
           {

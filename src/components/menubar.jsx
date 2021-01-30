@@ -8,10 +8,10 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
-import AddSharpIcon from '@material-ui/icons/AddSharp';
 import GetAppSharpIcon from '@material-ui/icons/GetAppSharp';
 import SearchIcon from '@material-ui/icons/Search';
 import ViewWeekSharpIcon from '@material-ui/icons/ViewWeekSharp';
+import AddForm from './addForm';
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
@@ -68,12 +68,6 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
     },
   },
-  sectionMobile: {
-    display: 'flex',
-    [theme.breakpoints.up('md')]: {
-      display: 'none',
-    },
-  },
 }));
 
 export default function MenuBar() {
@@ -106,17 +100,13 @@ export default function MenuBar() {
               </Badge>
             </IconButton>
 
-            <IconButton aria-label="show 17 new notifications" color="inherit">
+            <IconButton color="inherit">
               <Badge color="secondary">
                 <GetAppSharpIcon/>
               </Badge>
             </IconButton>
-
-            <IconButton
-              onClick={console.log("ADD FEEDBACK")}
-
-            >
-              <AddSharpIcon/>
+            <IconButton onClick={console.log("ADD FEEDBACK")} color="inherit">
+                <AddForm/>
             </IconButton>
           </div>
         </Toolbar>
