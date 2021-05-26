@@ -9,7 +9,6 @@ function login_page(){
     return(
         <div className='Login-page'>
             <AmplifySignOut/>
-            <h2>My App Content</h2>
         </div>
     )
 }

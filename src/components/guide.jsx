@@ -38,8 +38,7 @@ const useStyles = makeStyles({
   });
   
 export default function GuideDialog() {
-    const [fullWidth, setFullWidth] = React.useState(true);
-    const [maxWidth, setMaxWidth] = React.useState('lg');
+    const [fullWidth] = React.useState(true);
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
     const [open, setOpen] = React.useState(false);

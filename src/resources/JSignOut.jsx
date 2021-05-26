@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Auth} from 'aws-amplify';
+import LockSharpIcon from '@material-ui/icons/LockSharp';
 import './style.css';
 
 
@@ -27,7 +28,7 @@ class JSignOut extends Component{
 render(){
     return(
         <div>
-            <button onClick={this.singOut, console.log("PRESSED")}>Sign Out</button>
+            <LockSharpIcon onClick={this.singOut, console.log("LOGOUT")}>Sign Out</LockSharpIcon>
         </div>
     );
 }
