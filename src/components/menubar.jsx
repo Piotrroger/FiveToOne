@@ -1,15 +1,17 @@
-import React, { Component } from "react";
-import Container from "@material-ui/core/Container";
-import Paper from "@material-ui/core/Paper";
-import Button from "@material-ui/core/Button";
+import React from "react";
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import InputBase from '@material-ui/core/InputBase';
+import {AmplifySignOut} from "@aws-amplify/ui-react";
+import LockSharpIcon from '@material-ui/icons/LockSharp';
+import GuideDialog from './guide'
 import Badge from '@material-ui/core/Badge';
 import GetAppSharpIcon from '@material-ui/icons/GetAppSharp';
 import SearchIcon from '@material-ui/icons/Search';
+import AddSharpIcon from '@material-ui/icons/AddSharp';
+import Typography from '@material-ui/core/Typography'
 import ViewWeekSharpIcon from '@material-ui/icons/ViewWeekSharp';
 import AddForm from './addForm';
 const useStyles = makeStyles((theme) => ({
@@ -79,36 +81,49 @@ export default function MenuBar() {
     <div className={classes.grow}>
       <AppBar position="static">
         <Toolbar>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </div>
-          <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
+        <Typography type="title"
+          color="inherit"
+          style={{ borderRight: '0.2em solid black', padding: '1em' }}>
+          5:1 Connections
+        </Typography>
+        <IconButton aria-label="show 4 new mails" color="inherit"  AlignItems= "center">
               <Badge color="secondary">
                 <ViewWeekSharpIcon/>
               </Badge>
             </IconButton>
 
-            <IconButton color="inherit">
-              <Badge color="secondary">
+            <IconButton color="inherit"  AlignItems= "center">
                 <GetAppSharpIcon/>
-              </Badge>
             </IconButton>
-            <IconButton onClick={console.log("ADD FEEDBACK")} color="inherit">
-                <AddForm/>
+            <IconButton color="inherit">
+            <AddForm/>
             </IconButton>
-          </div>
+            <div className={classes.grow} />
+            <div className={classes.search}>
+              <div className={classes.searchIcon}>
+                <SearchIcon />
+              </div>
+              <InputBase
+                placeholder="Search…"
+                classes={{
+                  root: classes.inputRoot,
+                  input: classes.inputInput,
+                }}
+                inputProps={{ 'aria-label': 'search' }}
+              />
+            </div>
+            <IconButton edge="end">
+                <GuideDialog/>
+            </IconButton>
+            <IconButton>
+              <LockSharpIcon color="action" style ={{fontSize: 30}, {color: "#e0e0e0"}} onClick={AmplifySignOut}></LockSharpIcon>   
+            </IconButton>
+
+         
+
+
+
+
         </Toolbar>
       </AppBar>
     </div>

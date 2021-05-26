@@ -10,20 +10,22 @@ import InputLabel from '@material-ui/core/InputLabel';
 import DialogTitle from '@material-ui/core/DialogTitle'
 import Select from '@material-ui/core/Select';
 import Accordion from '@material-ui/core/Accordion';
+import AddSharpIcon from '@material-ui/icons/AddSharp';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import AddSharpIcon from '@material-ui/icons/AddSharp';
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
+import Amplify from 'aws-amplify';
+import {API, graphqlOperation} from 'aws-amplify';
+import awsconfig from '../aws-exports';
 import "./styles.css";
+
+Amplify.configure(awsconfig)
 
 
 
 const useStyles = makeStyles({
-    root: {
-      minWidth: 400,
-    },
     bullet: {
       display: 'inline-block',
       margin: '0 12px',
@@ -36,17 +38,10 @@ const useStyles = makeStyles({
       fontSize: 25,
       fontWeight:600
     },
-    menuButton: {
-      marginRight: "spacing=2",
-    },
     subtitle: {
         fontSize: 15,
     },
-    pos: {
-      marginBottom: 12,
-    },
     dialogSize:{
-
     },
     buttonColouring:{
         backgroundColor: '#0069d9',
@@ -64,13 +59,18 @@ const useStyles = makeStyles({
   });
   
 export default function AddForm() {
-    const [fullWidth, setFullWidth] = React.useState(true);
-    const [maxWidth, setMaxWidth] = React.useState('lg');
+    const [fullWidth] = React.useState(true);
     const [category, setCategory] = React.useState('');
     const [dept, setDept] = React.useState('');
     const [shift, setShift] = React.useState('');
     const [agreement, setAgreement] = React.useState('');
     const [sentiment, setSentiment] = React.useState('');
+    const [content,setContent] = React.useState('');
+
+
+    const handleContentChange = (event) =>{
+      setContent(event.target.value.toString().slice(0,300));
+    };
     const handleCatChange = (event) => {
       setCategory(event.target.value);
     };
@@ -100,6 +100,33 @@ export default function AddForm() {
     setOpen(false);
   };
 
+  async function addContact() {
+    const record = {
+      body:{
+        name: "TEST_NAME",
+        category: category,
+        Department: dept,
+        Steniment: sentiment,
+        Shift: shift,
+        id: "TESTID",
+        description: content
+        
+        
+  
+        
+  /*       <TableCell align="middle">{record.name}</TableCell>
+        <TableCell align="middle">{record.createdAt}</TableCell>
+        <TableCell align="middle">{record.category}</TableCell>
+        <TableCell align="middle">{record.Department}</TableCell>
+        <TableCell align="middle">{record.Steniment}</TableCell>
+        <TableCell align="middle">{record.Shift}</TableCell>
+        <TableCell align="middle">{record.id}</TableCell>
+        <TableCell align="middle">{record.Status}</TableCell>
+        <TableCell align="middle">{record.description}</TableCell> */
+      }
+    }
+    console.log(record);
+  }
   const descriptionElementRef = React.useRef(null);
   React.useEffect(() => {
     if (open) {
@@ -112,7 +139,7 @@ export default function AddForm() {
 
   return (
     <div >
-      <AddSharpIcon className={classes.menuButton} onClick={handleClickOpen('paper')}>Meeting Guide</AddSharpIcon>
+      <AddSharpIcon display="inline-flex" color="inherit" onClick={handleClickOpen('paper')}>Add</AddSharpIcon>
       <Dialog
         fullWidth={fullWidth}
         maxWidth="lg"
@@ -177,9 +204,8 @@ export default function AddForm() {
                   id="content"
                   label="Content"
                   name="content"
-                  onInput = {(e) =>{
-                    e.target.value = e.target.value.toString().slice(0,300)
-                }}/>
+                  value = {content}
+                  onInput = {handleContentChange}/>
 
                 <FormControl fullWidth={fullWidth}>
                   <InputLabel htmlFor="selected-category">Category</InputLabel>
@@ -201,13 +227,14 @@ export default function AddForm() {
                     <MenuItem value = {"Leaders/Managers/Culture"}>Leaders/Managers/Culture</MenuItem>
                     <MenuItem value = {"Other - not in category"}>Other - not in category</MenuItem>
                     <MenuItem value = {"Pay/Benefits/Time Off"}>Pay/Benefits/Time Off</MenuItem>
-                    <MenuItem value = {"Policies and Procedures"}>Policies and Procedures</MenuItem>
+                    <MenuItem value = {"Policioutes and Procedures"}>Policies and Procedures</MenuItem>
                     <MenuItem value = {"Process Improvements/Operations"}>Process Improvements/Operations</MenuItem>
                     <MenuItem value = {"Security"}>Security</MenuItem>
                     <MenuItem value = {"Sustainability"}>Sustainability</MenuItem>
                     <MenuItem value = {"Teamwork"}>Teamwork</MenuItem>
                     <MenuItem value = {"Transportation Commute"}>Transportation Commute</MenuItem>
                     <MenuItem value = {"Working conditions/Facilities"}>Working conditions/Facilities</MenuItem>
+                    <MenuItem value = {"SpecAudit"}>Specific Audit</MenuItem>
                     <MenuItem value = {"Safety/Medical Concerns"}>Safety/Medical Concerns</MenuItem>
                   </Select>
                 </FormControl>
@@ -299,7 +326,7 @@ export default function AddForm() {
           <Button onClick={handleClose} color="primary">
             Cancel
           </Button>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={addContact} color="primary">
             Submit
           </Button>
         </DialogActions>

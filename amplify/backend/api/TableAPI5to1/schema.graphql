@@ -8,3 +8,7 @@ type RecordTable @model {
   Status: String
   description: String
 }
+
+
+
+
