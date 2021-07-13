@@ -17,6 +17,7 @@ export const createRecordTable = /* GraphQL */ `
       description
       createdAt
       updatedAt
+      version
     }
   }
 `;
@@ -36,6 +37,7 @@ export const updateRecordTable = /* GraphQL */ `
       description
       createdAt
       updatedAt
+      version
     }
   }
 `;
@@ -55,6 +57,7 @@ export const deleteRecordTable = /* GraphQL */ `
       description
       createdAt
       updatedAt
+      version
     }
   }
 `;
