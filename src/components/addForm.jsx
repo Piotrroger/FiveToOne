@@ -113,7 +113,7 @@ export default function AddForm() {
         description: content
     }
     console.log(record);
-    await API.graphql({ query: UpdateTableMutation, variables: { input: record } });
+    await API.graphql(graphqlOperation(UpdateTableMutation,{ input: record }));
   }
   catch(error){
     console.log(error)
