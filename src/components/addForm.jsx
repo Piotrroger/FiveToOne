@@ -104,7 +104,6 @@ export default function AddForm() {
   async function addContact() {
     try{
     const record = {
-      body:{
         name: "TEST_NAME",
         category: category,
         Department: dept,
@@ -112,7 +111,6 @@ export default function AddForm() {
         Shift: shift,
         id: "TESTID",
         description: content
-      }
     }
     console.log(record);
     await API.graphql({ query: UpdateTableMutation, variables: { input: record } });
