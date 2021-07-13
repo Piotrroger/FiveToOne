@@ -1,14 +1,11 @@
-type RecordTable @model {
+type RecordTable @model @auth(rules: [{allow: public}]) {
   id: ID!
   name: String!
   category: String
   Department: String
-  Steniment : String
+  Steniment: String
   Shift: String
   Status: String
   description: String
 }
-
-
-
-
+  

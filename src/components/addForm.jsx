@@ -20,6 +20,7 @@ import Amplify from 'aws-amplify';
 import {API, graphqlOperation} from 'aws-amplify';
 import awsconfig from '../aws-exports';
 import "./styles.css";
+import {updateRecordTable as UpdateTableMutation} from '../graphql/mutations';
 
 Amplify.configure(awsconfig)
 
@@ -101,6 +102,7 @@ export default function AddForm() {
   };
 
   async function addContact() {
+    try{
     const record = {
       body:{
         name: "TEST_NAME",
@@ -110,22 +112,14 @@ export default function AddForm() {
         Shift: shift,
         id: "TESTID",
         description: content
-        
-        
-  
-        
-  /*       <TableCell align="middle">{record.name}</TableCell>
-        <TableCell align="middle">{record.createdAt}</TableCell>
-        <TableCell align="middle">{record.category}</TableCell>
-        <TableCell align="middle">{record.Department}</TableCell>
-        <TableCell align="middle">{record.Steniment}</TableCell>
-        <TableCell align="middle">{record.Shift}</TableCell>
-        <TableCell align="middle">{record.id}</TableCell>
-        <TableCell align="middle">{record.Status}</TableCell>
-        <TableCell align="middle">{record.description}</TableCell> */
       }
     }
     console.log(record);
+    await API.graphql({ query: UpdateTableMutation, variables: { input: record } });
+  }
+  catch(error){
+    console.log(error)
+  }
   }
   const descriptionElementRef = React.useRef(null);
   React.useEffect(() => {
