@@ -67,9 +67,38 @@ export default function AddForm() {
     const [agreement, setAgreement] = React.useState('');
     const [sentiment, setSentiment] = React.useState('');
     const [content,setContent] = React.useState('');
+    const [nameString, setNameString] = React.useState('');
+    const [id, setID] = React.useState('');
 
+state = {
+  open:false,
+  category:'',
+  dept:'',
+  shift: '',
+  agreement: '',
+  sentiment:'',
+  content:'',
+  id:''
+}
+    handleChange = name => event => {
+      this.setState({
+        [name]: event.target.value,
+      });
+      console.log("Name: " + this.state.content + this.state.category +  this.state.dept + this.state.shift  + this.state.agreement + this.state.sentiment + this.state.content + this.state.id)
+    };
 
-    const handleContentChange = (event) =>{
+    handleSubmit = (e) => {
+      this.setState({ open: false });
+      var itemDetails = {
+        name: this.state.itemName,
+        price: this.state.itemPrice,
+        description: this.state.itemDescription,
+      }
+      console.log("Item Details : " + JSON.stringify(itemDetails))
+      API.graphql(graphqlOperation(mutations.createItem, {input: itemDetails}));
+    }
+    
+/*     const handleContentChange = (event) =>{
       setContent(event.target.value.toString().slice(0,300));
     };
     const handleCatChange = (event) => {
@@ -86,7 +115,10 @@ export default function AddForm() {
     };
     const handleAgreementChange = (event) => {
       setAgreement(event.target.value);
-    };
+    }; */
+/*
+SET ID and SET NAME HERE!!!!
+*/
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const [scroll, setScroll] = React.useState('paper');
@@ -101,15 +133,16 @@ export default function AddForm() {
     setOpen(false);
   };
 
-  async function addContact() {
+/*   async function addContact() {
     try{
     const record = {
-        name: "TEST_NAME",
+        name: nameString,
         category: category,
         Department: dept,
         Steniment: sentiment,
         Shift: shift,
-        description: content
+        description: content,
+        ID: id
     }
     console.log(record);
     await API.graphql(graphqlOperation(UpdateTableMutation,{ input: record }));
@@ -117,7 +150,7 @@ export default function AddForm() {
   catch(error){
     console.log(error)
   }
-  }
+  } */
   const descriptionElementRef = React.useRef(null);
   React.useEffect(() => {
     if (open) {
@@ -196,7 +229,7 @@ export default function AddForm() {
                   label="Content"
                   name="content"
                   value = {content}
-                  onInput = {handleContentChange}/>
+                  onInput = {this.handleChange('content')}/>
 
                 <FormControl fullWidth={fullWidth}>
                   <InputLabel htmlFor="selected-category">Category</InputLabel>
@@ -206,7 +239,7 @@ export default function AddForm() {
                   id="category"
                   label = "Category"
                   value={category}
-                  onChange={handleCatChange}> 
+                  onChange={this.handleChange('category')}> 
                     
                     <MenuItem value = {"Career/Advancement Opportunities/Training"}>Career/Advancement Opportunities/Training</MenuItem>
                     <MenuItem value = {"Change One Thing (Group Agreement)"}>Change One Thing (Group Agreement)</MenuItem>
@@ -238,7 +271,7 @@ export default function AddForm() {
                   id="dept"
                   label = "Department"
                   value={dept}
-                  onChange={handleDeptChange}> 
+                  onChange={this.handleChange('dept')}> 
                     <MenuItem value = {"ISS"}>ISS</MenuItem>
                     <MenuItem value = {"ICQA"}>ICQA</MenuItem>
                     <MenuItem value = {"FLOW"}>FLOW</MenuItem>
@@ -265,7 +298,7 @@ export default function AddForm() {
                   id="shift"
                   label = "Shift"
                   value={shift}
-                  onChange={handleShiftChange}> 
+                  onChange={this.handleChange('shift')}> 
                     <MenuItem value = {"FED"}>Front End Days</MenuItem>
                     <MenuItem value = {"BED"}>Back End Days</MenuItem>
                     <MenuItem value = {"DND"}>Doughnut Days</MenuItem>
@@ -283,7 +316,7 @@ export default function AddForm() {
                   id="sentiment"
                   label = "Sentiment"
                   value={sentiment}
-                  onChange={handleSentimentChange}> 
+                  onChange={this.handleChange('sentiment')}> 
                     <MenuItem value = {"Positive"}>Positive</MenuItem>
                     <MenuItem value = {"Neutral"}>Neutral</MenuItem>  
                     <MenuItem value = {"Negative"}>Negative</MenuItem>                
@@ -298,7 +331,7 @@ export default function AddForm() {
                   id="agreement"
                   label = "Agreement"
                   value={agreement}
-                  onChange={handleAgreementChange}> 
+                  onChange={this.handleChange('agreement')}> 
                     <MenuItem value = {"1"}>1</MenuItem>
                     <MenuItem value = {"2"}>2</MenuItem>  
                     <MenuItem value = {"3"}>3</MenuItem>    
@@ -317,7 +350,7 @@ export default function AddForm() {
           <Button onClick={handleClose} color="primary">
             Cancel
           </Button>
-          <Button onClick={addContact} color="primary">
+          <Button onClick={handleSubmit} color="primary">
             Submit
           </Button>
         </DialogActions>

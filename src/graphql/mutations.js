@@ -15,9 +15,6 @@ export const createRecordTable = /* GraphQL */ `
       Shift
       Status
       description
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -37,9 +34,6 @@ export const updateRecordTable = /* GraphQL */ `
       Shift
       Status
       description
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -59,9 +53,6 @@ export const deleteRecordTable = /* GraphQL */ `
       Shift
       Status
       description
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
     }
