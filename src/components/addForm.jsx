@@ -90,9 +90,13 @@ state = {
     handleSubmit = (e) => {
       this.setState({ open: false });
       var itemDetails = {
-        name: this.state.itemName,
-        price: this.state.itemPrice,
-        description: this.state.itemDescription,
+        category:this.state.category,
+        dept:this.state.dept,
+        shift: this.state.shift,
+        agreement: this.state.agreement,
+        sentiment:this.state.sentiment,
+        content:this.state.content
+        
       }
       console.log("Item Details : " + JSON.stringify(itemDetails))
       API.graphql(graphqlOperation(mutations.createItem, {input: itemDetails}));
@@ -350,7 +354,7 @@ SET ID and SET NAME HERE!!!!
           <Button onClick={handleClose} color="primary">
             Cancel
           </Button>
-          <Button onClick={handleSubmit} color="primary">
+          <Button onClick={this.handleSubmit} color="primary">
             Submit
           </Button>
         </DialogActions>
