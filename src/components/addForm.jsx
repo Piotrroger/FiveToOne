@@ -109,7 +109,6 @@ export default function AddForm() {
         Department: dept,
         Steniment: sentiment,
         Shift: shift,
-        id: "TESTID",
         description: content
     }
     console.log(record);
