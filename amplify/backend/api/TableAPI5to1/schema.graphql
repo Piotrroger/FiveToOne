@@ -1,4 +1,4 @@
-type RecordTable @model @versioned @auth(rules: [{allow: public}]) {
+type RecordTable @model {
   id: ID!
   name: String!
   category: String
@@ -7,6 +7,5 @@ type RecordTable @model @versioned @auth(rules: [{allow: public}]) {
   Shift: String
   Status: String
   description: String
-  version: Int!
 }
   

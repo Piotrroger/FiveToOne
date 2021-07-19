@@ -1,6 +1,39 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const syncRecordTables = /* GraphQL */ `
+  query SyncRecordTables(
+    $filter: ModelRecordTableFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncRecordTables(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        name
+        category
+        Department
+        Steniment
+        Shift
+        Status
+        description
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
 export const getRecordTable = /* GraphQL */ `
   query GetRecordTable($id: ID!) {
     getRecordTable(id: $id) {
@@ -12,6 +45,9 @@ export const getRecordTable = /* GraphQL */ `
       Shift
       Status
       description
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -33,10 +69,14 @@ export const listRecordTables = /* GraphQL */ `
         Shift
         Status
         description
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
   }
 `;

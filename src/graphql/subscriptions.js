@@ -12,6 +12,9 @@ export const onCreateRecordTable = /* GraphQL */ `
       Shift
       Status
       description
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -28,6 +31,9 @@ export const onUpdateRecordTable = /* GraphQL */ `
       Shift
       Status
       description
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -44,6 +50,9 @@ export const onDeleteRecordTable = /* GraphQL */ `
       Shift
       Status
       description
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
