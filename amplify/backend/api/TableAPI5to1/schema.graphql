@@ -9,7 +9,5 @@ type RecordTable @model{
   description: String
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
-  lastChangedAt: AWSDateTime!
-  version: Int!
 }
   

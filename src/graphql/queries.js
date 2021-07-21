@@ -25,8 +25,6 @@ export const syncRecordTables = /* GraphQL */ `
         description
         createdAt
         updatedAt
-        lastChangedAt
-        version
         _version
         _deleted
         _lastChangedAt
@@ -49,8 +47,6 @@ export const getRecordTable = /* GraphQL */ `
       description
       createdAt
       updatedAt
-      lastChangedAt
-      version
       _version
       _deleted
       _lastChangedAt
@@ -75,8 +71,6 @@ export const listRecordTables = /* GraphQL */ `
         description
         createdAt
         updatedAt
-        lastChangedAt
-        version
         _version
         _deleted
         _lastChangedAt

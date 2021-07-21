@@ -17,8 +17,6 @@ export const createRecordTable = /* GraphQL */ `
       description
       createdAt
       updatedAt
-      lastChangedAt
-      version
       _version
       _deleted
       _lastChangedAt
@@ -41,8 +39,6 @@ export const updateRecordTable = /* GraphQL */ `
       description
       createdAt
       updatedAt
-      lastChangedAt
-      version
       _version
       _deleted
       _lastChangedAt
@@ -65,8 +61,6 @@ export const deleteRecordTable = /* GraphQL */ `
       description
       createdAt
       updatedAt
-      lastChangedAt
-      version
       _version
       _deleted
       _lastChangedAt
