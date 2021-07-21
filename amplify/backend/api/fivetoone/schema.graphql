@@ -1,4 +1,4 @@
-type Todo @model @auth{
+type RecordTable @model @auth(rules: [{ allow: owner }]){
   id: ID!
   name: String!
   createdAt: AWSDateTime
