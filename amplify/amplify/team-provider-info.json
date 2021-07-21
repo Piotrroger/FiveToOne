@@ -1,0 +1,20 @@
+{
+  "fivetoone": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-fivetoone-fivetoone-144217-authRole",
+      "UnauthRoleArn": "arn:aws:iam::961033116716:role/amplify-fivetoone-fivetoone-144217-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::961033116716:role/amplify-fivetoone-fivetoone-144217-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-fivetoone-fivetoone-144217-deployment",
+      "UnauthRoleName": "amplify-fivetoone-fivetoone-144217-unauthRole",
+      "StackName": "amplify-fivetoone-fivetoone-144217",
+      "StackId": "arn:aws:cloudformation:eu-west-2:961033116716:stack/amplify-fivetoone-fivetoone-144217/77a7b390-ea29-11eb-9734-0ad4b8d64534",
+      "AmplifyAppId": "d3mxmqjszxb2k0"
+    },
+    "categories": {
+      "auth": {
+        "fivetoone2e7968e8": {}
+      }
+    }
+  }
+}
