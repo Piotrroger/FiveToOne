@@ -84,7 +84,7 @@ class AddForm extends Component {
     this.setState({
       [name]: event.target.value,
     });
-    console.log("Name: " + this.state.content + this.state.category +  this.state.dept + this.state.shift  + this.state.agreement + this.state.sentiment + this.state.content + this.state.id)
+    console.log("Name: " + this.state.content + this.state.category +  this.state.dept + this.state.shift  + this.state.agreement + this.state.sentiment)
   };
 
 /*   handleSubmit = (e) => {
@@ -326,7 +326,9 @@ class AddForm extends Component {
             <Button onClick={this.handleClose} color="primary">
               Cancel
             </Button>
-            <Button onClick={this.handleSubmit} color="primary">
+            <Button onClick={() => {
+            this.handleSubmit();
+            }} color="primary">
               Submit
             </Button>
           </DialogActions>

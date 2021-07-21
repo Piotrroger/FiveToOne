@@ -7,5 +7,7 @@ type RecordTable @model {
   Shift: String
   Status: String
   description: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
 }
   
