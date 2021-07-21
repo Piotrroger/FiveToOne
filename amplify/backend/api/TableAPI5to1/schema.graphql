@@ -1,4 +1,4 @@
-type RecordTable @model {
+type RecordTable @model @versioned{
   id: ID!
   name: String!
   category: String
@@ -10,6 +10,6 @@ type RecordTable @model {
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
   lastChangedAt: AWSDateTime!
-  version: String
+  version: Int!
 }
   
