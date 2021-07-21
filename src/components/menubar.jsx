@@ -7,6 +7,8 @@ import InputBase from '@material-ui/core/InputBase';
 import {AmplifySignOut} from "@aws-amplify/ui-react";
 import LockSharpIcon from '@material-ui/icons/LockSharp';
 import GuideDialog from './guide'
+import Button from '@material-ui/core/Button'
+
 import Badge from '@material-ui/core/Badge';
 import GetAppSharpIcon from '@material-ui/icons/GetAppSharp';
 import SearchIcon from '@material-ui/icons/Search';
@@ -95,9 +97,7 @@ export default function MenuBar() {
             <IconButton color="inherit"  AlignItems= "center">
                 <GetAppSharpIcon/>
             </IconButton>
-            <IconButton color="inherit">
             <AddForm/>
-            </IconButton>
             <div className={classes.grow} />
             <div className={classes.search}>
               <div className={classes.searchIcon}>
