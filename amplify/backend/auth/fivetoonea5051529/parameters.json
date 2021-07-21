@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "fivetoone2319a79a_identitypool_2319a79a",
+    "identityPoolName": "fivetoonea5051529_identitypool_a5051529",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "fiveto2319a79a",
-    "userPoolName": "fivetoone2319a79a_userpool_2319a79a",
+    "resourceNameTruncated": "fivetoa5051529",
+    "userPoolName": "fivetoonea5051529_userpool_a5051529",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -20,7 +20,7 @@
     "requiredAttributes": [
         "email"
     ],
-    "userpoolClientGenerateSecret": true,
+    "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [
         "email"
@@ -28,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "fiveto2319a79a_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "fivetoa5051529_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "2319a79a",
-    "resourceName": "fivetoone2319a79a",
+    "sharedId": "a5051529",
+    "resourceName": "fivetoonea5051529",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -46,6 +46,9 @@
         ]
     },
     "useDefault": "default",
+    "usernameAttributes": [
+        "email"
+    ],
     "triggers": "{}",
     "userPoolGroupList": [],
     "serviceName": "Cognito",
@@ -53,6 +56,7 @@
     "parentStack": {
         "Ref": "AWS::StackId"
     },
+    "breakCircularDependency": true,
     "permissions": [],
     "dependsOn": []
 }

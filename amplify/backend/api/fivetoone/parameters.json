@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "fivetoone",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authfivetoonea5051529",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

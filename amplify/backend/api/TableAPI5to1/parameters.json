@@ -1,5 +1,0 @@
-{
-  "AppSyncApiName": "TableAPI5to1",
-  "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false
-}

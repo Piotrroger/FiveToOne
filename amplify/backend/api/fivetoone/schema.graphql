@@ -1,0 +1,12 @@
+type Todo @model @auth{
+  id: ID!
+  name: String!
+  createdAt: AWSDateTime
+  description: String
+  category: String
+  department:String
+  shift: String
+  agreement: String
+  sentiment:String
+  comment:String
+}
