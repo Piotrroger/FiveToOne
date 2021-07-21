@@ -87,7 +87,7 @@ class AddForm extends Component {
     console.log("Name: " + this.state.content + this.state.category +  this.state.dept + this.state.shift  + this.state.agreement + this.state.sentiment)
   };
 
-/*   handleSubmit = (e) => {
+  handleSubmit = (e) => {
     this.setState({ open: false });
     var itemDetails = {
       category:this.state.category,
@@ -100,7 +100,7 @@ class AddForm extends Component {
     }
     console.log("Item Details : " + JSON.stringify(itemDetails))
     API.graphql(graphqlOperation(mutations.updateRecordTable, {input: itemDetails}));
-      } */
+      }
   /*     const handleContentChange = (event) =>{
         setContent(event.target.value.toString().slice(0,300));
       };
