@@ -13,6 +13,10 @@ export declare class RecordTable {
   readonly Shift?: string;
   readonly Status?: string;
   readonly description?: string;
+  readonly createdAt: string;
+  readonly updatedAt: string;
+  readonly lastChangedAt: string;
+  readonly version: number;
   constructor(init: ModelInit<RecordTable>);
   static copyOf(source: RecordTable, mutator: (draft: MutableModel<RecordTable>) => MutableModel<RecordTable> | void): RecordTable;
 }

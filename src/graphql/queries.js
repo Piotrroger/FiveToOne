@@ -23,11 +23,13 @@ export const syncRecordTables = /* GraphQL */ `
         Shift
         Status
         description
+        createdAt
+        updatedAt
+        lastChangedAt
+        version
         _version
         _deleted
         _lastChangedAt
-        createdAt
-        updatedAt
       }
       nextToken
       startedAt
@@ -45,11 +47,13 @@ export const getRecordTable = /* GraphQL */ `
       Shift
       Status
       description
+      createdAt
+      updatedAt
+      lastChangedAt
+      version
       _version
       _deleted
       _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -69,11 +73,13 @@ export const listRecordTables = /* GraphQL */ `
         Shift
         Status
         description
+        createdAt
+        updatedAt
+        lastChangedAt
+        version
         _version
         _deleted
         _lastChangedAt
-        createdAt
-        updatedAt
       }
       nextToken
       startedAt
