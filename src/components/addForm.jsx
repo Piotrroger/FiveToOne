@@ -91,7 +91,7 @@ class AddForm extends Component {
     this.setState({ open: false });
     var itemDetails = {
       category:this.state.category,
-      dept:this.state.dept,
+      Department:this.state.dept,
       shift: this.state.shift,
       agreement: this.state.agreement,
       sentiment:this.state.sentiment,
