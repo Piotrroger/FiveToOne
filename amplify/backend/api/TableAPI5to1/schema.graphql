@@ -1,4 +1,4 @@
-type RecordTable @model @versioned{
+type RecordTable @model{
   id: ID!
   name: String!
   category: String
